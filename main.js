@@ -51,21 +51,34 @@ function getTracks(userInput) {
   }
 
 //updating tracks in html
-  function updateTracks(userInput) {
+function updateTracks(userInput) {
     //get tracks from iTunes API
     getTracks(encodeURIComponent(userInput))
-        .then(function (trackData) {
-            console.log(trackData)
-            const trackListDiv = document.getElementById('track-list')
-            const result = trackData.results[0]
+    .then(function (trackData) {
+        console.log(trackData)
+        const trackListDiv = document.getElementById('track-list')
+        trackListDiv.innerHTML = ""
+        for(let i=0; i<trackData.resultCount; i++){
+            const result = trackData.results[i]
+            // create track element and add class
             const imageHtml = `<img id="${result.previewUrl}" src="${result.artworkUrl100}" />`
             const trackNameDiv = `<div class="track-name">${result.trackCensoredName}</div>`
             const trackArtistDiv = `<div class="track-artist">${result.artistName}</div>`
-            console.log(imageHtml)
-            console.log(trackNameDiv)
-            console.log(trackArtistDiv)
-            trackListDiv.innerHTML = `<div class="track">${imageHtml} ${trackNameDiv} ${trackArtistDiv}</div>`
+            let track = document.createElement('div')
+            track.classList.add('track')
+            track.innerHTML = `${imageHtml} ${trackNameDiv} ${trackArtistDiv}`
+            trackListDiv.append(track)
+        }
+        
+        
+        // const imageHtml = `<img id="${result.previewUrl}" src="${result.artworkUrl100}" />`
+        // const trackNameDiv = `<div class="track-name">${result.trackCensoredName}</div>`
+        // const trackArtistDiv = `<div class="track-artist">${result.artistName}</div>`
+        // console.log(imageHtml)
+        // console.log(trackNameDiv)
+        // console.log(trackArtistDiv)
+        // trackListDiv.innerHTML = `<div class="track">${imageHtml} ${trackNameDiv} ${trackArtistDiv}</div>`
 
-        })
+    })
 }
 
