@@ -1,17 +1,31 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     const submitButton = document.getElementById('submit')
+    const trackList = document.getElementById('track-list')
 
     submitButton.addEventListener('click', event => {
-        console.log("button clicked!")
+        // console.log("button clicked!")
         searchTrack()
-    })   
+    })
+    trackList.addEventListener('click', event => {
+        // console.log("track clicked!")
+        if(event.target && event.target.nodeName == "IMG") {
+            // console.log("List item ", event.target.id, " was clicked!")
+            const audioBar = document.getElementById('audio')
+            audioBar.src = event.target.id
+            audioBar.play()
+        }
+    })
+
 })
 
 function searchTrack() {
     //get user input
     const userInput =  document.getElementById('searchtext')
     const searchError = document.getElementById('searcherror')
+    // reset audio bar
+    const audioBar = document.getElementById('audio')
+    audioBar.src = ""
     //get value of the user input and validate it
     const userInputValue = userInput.value
     if(userInputValue != null && userInputValue != '') {
@@ -39,12 +53,12 @@ function getTracks(userInput) {
 //updating tracks in html
   function updateTracks(userInput) {
     //get tracks from iTunes API
-    getTracks(userInput)
+    getTracks(encodeURIComponent(userInput))
         .then(function (trackData) {
-            // console.log(trackData)
+            console.log(trackData)
             const trackListDiv = document.getElementById('track-list')
             const result = trackData.results[0]
-            const imageHtml = `<img src="${result.artworkUrl100}" />`
+            const imageHtml = `<img id="${result.previewUrl}" src="${result.artworkUrl100}" />`
             const trackNameDiv = `<div class="track-name">${result.trackCensoredName}</div>`
             const trackArtistDiv = `<div class="track-artist">${result.artistName}</div>`
             console.log(imageHtml)
