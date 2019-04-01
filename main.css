@@ -1,27 +1,62 @@
+
+body {
+    font-family: 'Dancing Script';font-size: 22px;
+    background-image: url("https://images.unsplash.com/photo-1546449982-a01eedcc37c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: 900;
+}
+
 header {
-    font-family: sans serif;
-    font-size: 25px;
+    font-size: 100px;
     font-weight: bold;
-    color: #E74C3C;
+    color: #E7E4CB;
     text-align: center;
-    background-color: #F7FCFB; 
+    text-shadow:
+		-2px -2px 0 #3B0735,
+		2px -2px 0 #3B0735,
+		-2px 2px 0 #3B0735,
+		2px 2px 0 #3B0735;
 } 
 
-
-#searchtext {
-    border: 0;
-    line-height: 2.5;
-    padding: 0 20px;
-    font-size: 1rem;
+input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 10px 10px 20px 650px;
+    border: 1px solid;
+    border-color: #3B0735;
+    background-color: #E7E4CB;
+    color: #392805;
     text-align: center;
-    color: F9F9FB;
-    text-shadow: 1px 1px 1px #000;
-    border-radius: 10px;
-    background-color: rgba(220, 0, 0, 1);
-    background-image: linear-gradient(to top left,
-                                      rgba(0, 0, 0, .2),
-                                      rgba(0, 0, 0, .2) 30%,
-                                      rgba(0, 0, 0, 0));
-    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
-                inset -2px -2px 3px rgba(0, 0, 0, .6);
+    font-size: 2rem;
+    border-radius: 12px;
+  
 }
+
+.track-list {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 40px;
+    justify-items: center;
+}
+
+.artwork {
+    width: 200px;
+    height: 200px;
+}
+
+.track-player {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 15%;
+}
+
+.searcherror {
+    text-align: center;
+    font-size: 10rem strong;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
