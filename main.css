@@ -5,32 +5,46 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     font-weight: 900;
+    color: #E7E4CB;
 }
 
 header {
-    font-size: 100px;
+    font-size: 120px;
     font-weight: bold;
-    color: #E7E4CB;
     text-align: center;
     text-shadow:
-		-2px -2px 0 #3B0735,
-		2px -2px 0 #3B0735,
-		-2px 2px 0 #3B0735,
-		2px 2px 0 #3B0735;
+		-1.5px -1.5px 0 #3B0735,
+		1.5px -1.5px 0 #3B0735,
+		-1.5px 1.5px 0 #3B0735,
+		1.5px 1.5px 0 #3B0735;
 } 
 
 input[type=text] {
-    width: 30%;
+    width: 50%;
     padding: 12px 20px;
     /* margin: 10px 10px 20px 650px; */
-    border: 1px solid;
+    border: 2px solid;
     border-color: #3B0735;
     background-color: #E7E4CB;
     color: #392805;
     text-align: center;
     font-size: 2rem;
-    border-radius: 12px;
-  
+    border-radius: 30px;
+}
+
+.submit {
+    width: 5%;
+    border-radius: 18px;
+    box-shadow: 0 5px #999;
+    cursor: pointer;
+}
+
+.submit:hover {background-color: #F19C7C}
+
+.submit:active {
+  background-color: #F19C7C;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 .track-list {
@@ -47,12 +61,20 @@ input[type=text] {
 
 .searcherror {
     text-align: center;
-    font-size: 10rem strong;
-    margin-bottom: 20px;
-    color: #000000;
+    font-size: 2rem;
+    text-shadow:
+    -1.5px -1.5px 0 #3B0735,
+    1.5px -1.5px 0 #3B0735,
+    -1.5px 1.5px 0 #3B0735,
+    1.5px 1.5px 0 #3B0735;
+    margin: 10px
 }
 
 .searchinput {
   text-align: center;  
+}
+
+#audio {
+    margin: 10px;
 }
 
