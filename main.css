@@ -22,7 +22,7 @@ header {
 input[type=text] {
     width: 30%;
     padding: 12px 20px;
-    margin: 10px 10px 20px 650px;
+    /* margin: 10px 10px 20px 650px; */
     border: 1px solid;
     border-color: #3B0735;
     background-color: #E7E4CB;
@@ -45,18 +45,14 @@ input[type=text] {
     height: 200px;
 }
 
-.track-player {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-    width: 15%;
-}
-
 .searcherror {
     text-align: center;
     font-size: 10rem strong;
     margin-bottom: 20px;
     color: #000000;
+}
+
+.searchinput {
+  text-align: center;  
 }
 

@@ -16,17 +16,19 @@
   </head>
     <body>
       <header>Kool Trax</header>
-        <input id="searchtext" type="text" placeholder="Title or Artist"/>
-        <button class="submit" id="submit"
-         type="button">
-          Search
-        </button>
-        <div class="searcherror" id="searcherror"></div>
-        <div id="track-player" class="track-player">
+        <div class="searchinput">
+          <input id="searchtext" type="text" placeholder="Title or Artist"/>
+          <button class="submit" id="submit"
+           type="button">
+           Search
+          </button>
+          <div class="searcherror" id="searcherror"></div>
+          <div id="track-player" class="track-player">
           <audio id="audio" controls src="">
               Your browser does not support the
               <code>audio</code> element.
           </audio>
+          </div>
         </div>
         <div class="track-display">
           <div id="track-list" class="track-list"></div>
